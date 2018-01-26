@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './client/home/home.component';
 import { UploadComponent } from './client/upload/upload.component';
+import { EmployeesReportComponent } from './client/employees-report/employees-report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UploadComponent
+    UploadComponent,
+    EmployeesReportComponent
   ],
   imports: [
     BrowserModule,
