@@ -31,18 +31,19 @@ export class UploadComponent implements OnInit {
       const _formData = new FormData();
       _formData.append('file', this.file, this.file.name);
 
-      console.log(_formData);
+      // console.log(_formData);
 
       this.http.post(this.api + '/api/upload', _formData).subscribe(
         (data: Response) => {
           const _data = data.json();
           const message = _data.message;
-          const csvJSON = _data.csvJSON;
+          // const csvJSON = _data.csvJSON;
 
           console.log('post successful message: ' + message);
-          console.log('csvJSON', csvJSON);
-          // forward to /activity/list
-          // this.router.navigateByUrl('/activity/list');
+          // console.log('csvJSON', csvJSON);
+
+          // forward to /report
+          this.router.navigateByUrl('/report');
         },
         (err: Response) => {
           const _err = err.json();
