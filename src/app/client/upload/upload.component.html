@@ -1,3 +1,16 @@
-<p>
-  upload works!
-</p>
+<div class="row" style="margin-top: 15px">
+  <div class="alert alert-danger" role="alert" *ngIf="error === true && error_message != ''">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    {{ error_message }}
+  </div>
+
+  <form #activityForm="ngForm" (submit)="onSubmit(activityForm)">
+    <div class="form-group">
+      <label for="file">CSV File: </label>
+      <input type="file" class="form-control" id="file" ngModel name="file" #file="ngModel" accept=".csv" (change)="setFile($event)">
+    </div>
+
+    <input type="submit" value="Upload" class="btn btn-primary">
+  </form>
+</div>
