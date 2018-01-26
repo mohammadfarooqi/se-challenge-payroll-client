@@ -25,6 +25,9 @@ import { EmployeesReportComponent } from './client/employees-report/employees-re
       },
       {
         path: 'upload', component: UploadComponent
+      },
+      {
+        path: 'report', component: EmployeesReportComponent
       }
     ]),
     FormsModule
