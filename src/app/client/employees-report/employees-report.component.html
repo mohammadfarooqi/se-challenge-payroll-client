@@ -1,3 +1,28 @@
 <div class="row" style="margin-top: 15px">
   <h3>Payroll Report</h3>
+
+  <div class="alert alert-danger" role="alert" *ngIf="error === true && error_message != ''">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    {{ error_message }}
+  </div>
+
+  <div class="col-sm-6">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="col-sm-1 align-center">Employee ID</th>
+          <th class="col-sm-3">Pay Period</th>
+          <th class="col-sm-3">Amount Paid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of data">
+          <td>{{ row.employee_id }}</td>
+          <td>{{ row.pay_period }}</td>
+          <td>${{ row.amount_paid }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
