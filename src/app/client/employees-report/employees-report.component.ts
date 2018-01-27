@@ -13,7 +13,7 @@ export class EmployeesReportComponent implements OnInit {
 
   private api = environment.apiurl;
 
-  data: any = null;
+  data: any = [];
   error: Boolean = false;
   error_message: String = '';
 

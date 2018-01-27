@@ -11,17 +11,22 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th class="col-sm-1 align-center">Employee ID</th>
+          <th class="col-sm-1">Employee ID</th>
           <th class="col-sm-3">Pay Period</th>
           <th class="col-sm-3">Amount Paid</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let row of data">
-          <td>{{ row.employee_id }}</td>
-          <td>{{ row.pay_period }}</td>
-          <td>${{ row.amount_paid }}</td>
-        </tr>
+        <ng-container *ngIf="data && data.length > 0">
+          <tr *ngFor="let row of data">
+            <td>{{ row.employee_id }}</td>
+            <td>{{ row.pay_period }}</td>
+            <td>${{ row.amount_paid }}</td>
+          </tr>
+        </ng-container>
+        <ng-container *ngIf="data && data.length === 0">
+          <td colspan="3" style="padding: 5px 0px">No Data Available</td>
+        </ng-container>
       </tbody>
     </table>
   </div>
